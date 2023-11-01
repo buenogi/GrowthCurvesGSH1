@@ -107,7 +107,7 @@ P1 <- DataGC_error%>%
                                       "C58","C67","C73", "C85", "C89")))%>%
 ggplot() +
   aes(x = tempo, y = mean_value, colour = pop, group = pop) +
-  geom_line(size = 1) +
+  geom_line(size = 2) +
   geom_errorbar(aes(ymax = mean_value + sd_value/sqrt(3),
                     ymin  = mean_value - sd_value/sqrt(3)), 
                 width = 0.05)+
@@ -128,7 +128,7 @@ P2 <- DataGC_error%>%
                                       "C58","C67","C73", "C85", "C89")))%>%
   ggplot() +
   aes(x = tempo, y = mean_value, group = conc, color = conc) +
-  geom_line(size = 1) +
+  geom_line(size = 2) +
   geom_errorbar(aes(ymax = mean_value + sd_value/sqrt(3),
                     ymin = mean_value - sd_value/sqrt(3)), width = 0.1)+
   facet_wrap(vars(pop), nrow = 2)+
@@ -139,6 +139,7 @@ P2 <- DataGC_error%>%
   theme_bw() +
   theme(text = element_text(size = 18),
         legend.position = "bottom")
+
 P2
 ggsave("Figuras/05_GrowthC_plot.png")  
 
