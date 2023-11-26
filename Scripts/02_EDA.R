@@ -6,6 +6,7 @@ library(dplyr)
 library(ggplot2)
 
 
+
 #Loading data
 DataGC <- read.csv(file = "Data/Processed/DataGC.csv")
 
@@ -136,6 +137,7 @@ P2 <- DataGC_error%>%
        y = "Abs (600nm)",
        color = "Concentração de SbIII (μM)")+
   scale_x_discrete(labels = c("24h", "48h", "72h", "96h"))+
+  scale_color_manual(values = c( "lightseagreen", "deeppink"))+
   theme_bw() +
   theme(text = element_text(size = 18),
         legend.position = "bottom")
